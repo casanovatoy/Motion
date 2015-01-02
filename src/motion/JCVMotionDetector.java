@@ -94,7 +94,7 @@ public class JCVMotionDetector {
 
     private IplImage convertFrame(IplImage img) /* Conversion involves: blurring, converting color to grayscale, and equalization */ {
     // blur image to get reduce camera noise 
-        //cvSmooth(img, img, CV_BLUR, 3);  
+        cvSmooth(img, img, CV_GAUSSIAN, 3, 0, 0, 0); 
 
         // convert to grayscale
         IplImage grayImg = IplImage.create(img.width(), img.height(), IPL_DEPTH_8U, 1);
